@@ -1,0 +1,4 @@
+{
+"name" : "mac_role2",
+"run_list" : "recipe[petclinic::mac]"
+}
