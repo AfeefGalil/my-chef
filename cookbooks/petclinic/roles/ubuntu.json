@@ -1,4 +1,4 @@
 {
 "name" : "ubuntu_role",
-"run_list" : "recipe[petclinic::ubuntu]"
+"run_list" : "recipe[petclinic::default]"
 }

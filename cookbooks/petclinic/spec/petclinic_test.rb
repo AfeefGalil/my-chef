@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe 'petclinic::ubuntu' do
+describe 'petclinic::default' do
     context 'updates apt repo' do
         it { is_expected.to update_apt_update('update_repo') }
     end
@@ -9,17 +9,12 @@ describe 'petclinic::ubuntu' do
         it { is_expected.to create_remote_file('/home/ubuntu/petclinic.jar') }
     end
 
-    context 'When all attributes are default, on Ubuntu 20.04' do
-        it { expect { chef_run }.to_not raise_error }
+    context 'creates a file for petclinic service' do
+        it { is_expected.to create_file('/etc/systemd/system/petclinic.service') }
     end
 
-    context 'creates a link with the default action' do
-        it { is_expected.to create_link('/home/ubuntu/petclinic.jar') }
-    end
-
-    it 'creates a link to the specified target' do
-        link = chef_run.link('/home/ubuntu/petclinic.jar')
-        expect(link).to link_to('/etc/init.d/petclinic')
+    context 'creates a file for petclinic bash script' do
+        it { is_expected.to create_file('/home/ubuntu/petclinic.sh') }
     end
 
     context 'enables petclinic service' do
