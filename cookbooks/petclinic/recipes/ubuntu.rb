@@ -2,7 +2,7 @@ apt_update 'update_repo' do
   action :update
 end
 
-remote_file '/home/ubuntu' do
+remote_file '/home/ubuntu/petclinic.jar' do
   source 'https://afeef-tc-petclinic.s3.us-east-2.amazonaws.com/spring-petclinic-2.4.2.jar'
   mode '0755'
   action :create
