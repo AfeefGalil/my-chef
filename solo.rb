@@ -1,4 +1,3 @@
-chef_repo_path '/Users/afeefaz/Desktop/Chef/afeef_petclinic'
-cookbook_path ['/Users/afeefaz/Desktop/Chef/afeef_petclinic/cookbooks', '/Users/afeefaz/Desktop/Chef/afeef_petclinic/site_cookbooks']
+chef_repo_path '/home/ubuntu/my-chef'
+cookbook_path '/home/ubuntu/my-chef/site_cookbooks'
 role_path 'cookbooks/petclinic/roles'
-
