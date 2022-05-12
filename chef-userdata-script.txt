@@ -11,4 +11,5 @@ cd /home/ubuntu/my-chef
 echo "cookbook_path /home/ubuntu/my-chef/site_cookbooks' > solo.rb
 cd /home/ubuntu/my-chef
 sudo apt install default-jre -y
-sudo chef-solo -c solo.rb -o 'recipe[petclinic::ubuntu]' --log_level info --chef-license=accept
+sudo apt install docker.io -y
+sudo chef-solo -c solo.rb -o 'recipe[petclinic]' --log_level info --chef-license=accept
