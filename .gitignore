@@ -126,3 +126,4 @@ nodes
 site_cookbooks/
 petclinic.service
 petclinic.sh
+application.properties

@@ -14,8 +14,8 @@ remote_file '/etc/systemd/system/petclinic.service' do
   action :create
 end
 
-remote_file '/home/ubuntu/petclinic.sh' do
-  source 'https://afeef-tc-petclinic.s3.us-east-2.amazonaws.com/petclinic.sh'
+remote_file '/home/ubuntu/application.properties' do
+  source 'https://afeef-tc-petclinic.s3.us-east-2.amazonaws.com/application.properties'
   mode '0755'
   action :create
 end
