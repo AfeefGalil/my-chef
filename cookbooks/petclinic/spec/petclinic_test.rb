@@ -5,16 +5,16 @@ describe 'petclinic::default' do
         it { is_expected.to update_apt_update('update_repo') }
     end
     
-    context 'creates a remote_file with the default action' do
-        it { is_expected.to create_remote_file('/home/ubuntu/petclinic.jar') }
+    context 'creates a Jar File' do
+        it { is_expected.to create_file('/home/ubuntu/petclinic.jar') }
     end
 
     context 'creates a file for petclinic service' do
         it { is_expected.to create_file('/etc/systemd/system/petclinic.service') }
     end
 
-    context 'creates a file for petclinic bash script' do
-        it { is_expected.to create_file('/home/ubuntu/petclinic.sh') }
+    context 'creates a file for petclinic application properties' do
+        it { is_expected.to create_file('/home/ubuntu/application.properties') }
     end
 
     context 'enables petclinic service' do
