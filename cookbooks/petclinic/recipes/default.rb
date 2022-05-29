@@ -6,7 +6,6 @@ aws_s3_file '/home/ubuntu/petclinic.jar' do
   bucket node['petclinic']['aws_bucket_name']
   remote_path 'petclinic.jar'
   region node['petclinic']['aws_region']
-
   action :create
 end
 
@@ -16,9 +15,9 @@ file '/home/ubuntu/petclinic.jar' do
 end
 
 aws_s3_file '/etc/systemd/system/petclinic.service' do
-  bucket 'afeef-tc-petclinic'
+  bucket node['petclinic']['aws_bucket_name']
   remote_path 'petclinic.service'
-  region 'us-east-2'
+  region node['petclinic']['aws_region']
   action :create
 end
 
@@ -28,9 +27,9 @@ file '/etc/systemd/system/petclinic.service' do
 end
 
 aws_s3_file '/home/ubuntu/application.properties' do
-  bucket 'afeef-tc-petclinic'
+  bucket node['petclinic']['aws_bucket_name']
   remote_path 'application.properties'
-  region 'us-east-2'
+  region node['petclinic']['aws_region']
   action :create
 end
 
