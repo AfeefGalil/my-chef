@@ -3,9 +3,10 @@ apt_update 'update_repo' do
 end
 
 aws_s3_file '/home/ubuntu/petclinic.jar' do
-  bucket 'afeef-tc-petclinic'
+  bucket node['petclinic']['aws_bucket_name']
   remote_path 'petclinic.jar'
-  region 'us-east-2'
+  region node['petclinic']['aws_region']
+
   action :create
 end
 
