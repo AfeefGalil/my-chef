@@ -4,7 +4,7 @@ end
 
 aws_s3_file '/home/ubuntu/petclinic.jar' do
   bucket node['petclinic']['aws_bucket_name']
-  remote_path 'petclinic.jar'
+  remote_path node['petclinic']['art_name']
   region node['petclinic']['aws_region']
   action :create
 end
