@@ -4,7 +4,7 @@ end
 
 aws_s3_file '/home/ubuntu/petclinic.jar' do
   bucket 'afeef-tc-petclinic'
-  remote_path node['artifact']
+  remote_path 'petclinic.jar'
   region 'us-east-2'
   action :create
 end
